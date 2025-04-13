@@ -16,7 +16,7 @@
 
 grammar Directives;
 
-options {
+options { 
   language = Java;
 }
 
@@ -140,8 +140,13 @@ numberRange
  ;
 
 value
- : String | Number | Column | Bool
- ;
+    : STRING
+    | NUMBER
+    | BOOLEAN
+    | NULL
+    | BYTE_SIZE
+    | TIME_DURATION
+    ;
 
 ecommand
  : '!' Identifier
@@ -311,3 +316,16 @@ fragment Int
 fragment Digit
  : [0-9]
  ;
+
+
+// Add to lexer rules
+fragment DIGIT : [0-9];
+fragment BYTE_UNIT : ('B'|'b'|'KB'|'kb'|'MB'|'mb'|'GB'|'gb'|'TB'|'tb');
+fragment TIME_UNIT : ('ns'|'us'|'ms'|'s'|'sec'|'m'|'min'|'h'|'hr'|'d'|'day'|'days');
+
+BYTE_SIZE : DIGIT+ ('.' DIGIT+)? BYTE_UNIT;
+TIME_DURATION : DIGIT+ ('.' DIGIT+)? TIME_UNIT;
+
+// Add specific argument types
+byteSizeArg : BYTE_SIZE;
+timeDurationArg : TIME_DURATION;

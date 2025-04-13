@@ -1,0 +1,10 @@
+Prompt 1: How to add BYTE_SIZE and TIME_DURATION to an ANTLR grammar for CDAP Wrangler?
+Prompt 2: Java code to parse "10KB", "1.5MB", and "3GB" into bytes using regex or conversion logic.
+Prompt 3: Java method to parse "2.1s", "800ms", and convert to milliseconds or nanoseconds.
+Prompt 4: How to implement a Wrangler directive that aggregates two columns with different units (bytes and time)?
+Prompt 5: How to use ExecutorContext for storing state between rows in Wrangler aggregation?
+Prompt 6: Unit test cases to validate parsing of sizes and durations in various units (edge cases included).
+Prompt 7: How to integrate new token types into Wrangler Token.java and grammar usage definitions?
+Prompt 8: Strategy to convert byte totals to MB/GB and duration totals to seconds/minutes correctly.
+Prompt 9: Maven command to regenerate ANTLR parser from Directives.g4
+Prompt 10: Best practices for structuring grammar and visitor methods in Wrangler ANTLR-based parser.
