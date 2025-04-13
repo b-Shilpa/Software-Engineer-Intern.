@@ -139,9 +139,7 @@ numberRange
  : Number ':' Number '=' value
  ;
 
-value
- : String | Number | Column | Bool
- ;
+value: BYTE_SIZE | TIME_DURATION | String | Number | Column | Bool;
 
 ecommand
  : '!' Identifier
@@ -311,3 +309,12 @@ fragment Int
 fragment Digit
  : [0-9]
  ;
+// Lexer rules for byte size and time duration
+BYTE_SIZE: [0-9]+ (('KB' | 'K' | 'MB' | 'M' | 'GB' | 'G' | 'TB' | 'T')?);
+TIME_DURATION: [0-9]+ (('ms' | 's' | 'm' | 'h')?);
+
+// Helper fragments for units
+fragment BYTE_UNIT: 'KB' | 'K' | 'MB' | 'M' | 'GB' | 'G' | 'TB' | 'T';
+fragment TIME_UNIT: 'ms' | 's' | 'm' | 'h';
+byteSizeArg: BYTE_SIZE;
+timeDurationArg: TIME_DURATION;
