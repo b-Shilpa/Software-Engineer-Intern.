@@ -1,0 +1,28 @@
+# Interaction Log: AI-assisted development for enhancing CDAP Wrangler with Byte Size and Time Duration parsers.
+# Author: [Simrandeep Singh]
+
+=== Prompt 1 ===
+Describe how to implement a parser that can handle byte size units (e.g., "10KB", "1.5MB", "2GB") and convert them into a canonical format (bytes).
+
+=== Prompt 2 ===
+Provide guidance on implementing a similar parser for time durations such as "200ms", "5s", "2.5m", and "1h", converting them into a canonical unit (milliseconds or nanoseconds).
+
+=== Prompt 3 ===
+Explain how to extend the CDAP Wrangler grammar file (Directives.g4) to support new token types for BYTE_SIZE and TIME_DURATION, including corresponding lexer and parser rules.
+
+=== Prompt 4 ===
+What updates are needed in the wrangler-api module to support new token types, including creating `ByteSize.java` and `TimeDuration.java` classes?
+
+=== Prompt 5 ===
+Outline how to update the core parsing logic in wrangler-core to recognize and process the new BYTE_SIZE and TIME_DURATION tokens correctly.
+
+=== Prompt 6 ===
+Assist in writing a new directive named `aggregate-stats` that can process byte size and time duration columns, perform aggregation, and return values in user-defined units.
+
+=== Prompt 7 ===
+Provide unit test examples for verifying parsing of byte sizes and time durations, including handling edge cases like invalid input, decimals, and varying case (e.g., "KB", "kb").
+
+=== Prompt 8 ===
+Give a clear test plan for the `aggregate-stats` directive, including recipe examples and expected output validation using assertions.
+
+
