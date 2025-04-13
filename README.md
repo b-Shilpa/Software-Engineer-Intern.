@@ -216,3 +216,38 @@ Cask is a trademark of Cask Data, Inc. All rights reserved.
 
 Apache, Apache HBase, and HBase are trademarks of The Apache Software Foundation. Used with
 permission. No endorsement by The Apache Software Foundation is implied by the use of these marks.
+
+
+
+---
+
+## 🔄 New Feature: ByteSize and TimeDuration Token Parsers
+
+Wrangler now natively supports parsing and aggregating values expressed in units of data size (e.g., KB, MB) and time duration (e.g., ms, s), reducing the need for custom recipes and transformations.
+
+### ✅ Supported Units
+
+#### Byte Size Units
+- B (Bytes)
+- KB (Kilobytes)
+- MB (Megabytes)
+- GB (Gigabytes)
+- TB (Terabytes)
+
+#### Time Duration Units
+- ns (Nanoseconds)
+- ms (Milliseconds)
+- s (Seconds)
+- m (Minutes)
+- h (Hours)
+
+### 🚀 New Directive: `aggregate-stats`
+
+This directive aggregates values from two columns:
+- One representing data size (e.g., `"10MB"`)
+- One representing time durations (e.g., `"1.2s"`)
+
+#### 📌 Usage
+
+```wrangler
+aggregate-stats :<size_column> :<duration_column> <output_size_column> <output_time_column> [unit=MB] [timeUnit=s]
