@@ -127,3 +127,25 @@ public interface Directive extends Executor<List<Row>, List<Row>>, EntityMetrics
     return null;
   }
 }
+package io.cdap.wrangler.core.parser; // Adjust the package as necessary
+
+import io.cdap.wrangler.api.parser.ByteSize;
+import io.cdap.wrangler.api.parser.TimeDuration;
+
+// Assuming this class extends the generated base visitor class
+public class DirectivesVisitor extends YourBaseVisitorClass {
+
+    @Override
+    public Object visitByteSizeArg(ByteSizeArgContext ctx) {
+        // Create a new ByteSize instance using the text from the context
+        return new ByteSize(ctx.getText());
+    }
+
+    @Override
+    public Object visitTimeDurationArg(TimeDurationArgContext ctx) {
+        // Create a new TimeDuration instance using the text from the context
+        return new TimeDuration(ctx.getText());
+    }
+
+    // Other visitor methods...
+}
